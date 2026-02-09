@@ -1,0 +1,172 @@
+[
+    {
+        "id": 4,
+        "name": "Standard double",
+        "description": "",
+        "facilities": [
+            "1 bed (6 kaki)",
+            "toilet duduk",
+            "lemari rak",
+            "AC",
+            "shower & water heater (tidak ada ember gayung)",
+            "kamar token",
+            "TV",
+            "meja dan kursi belajar"
+        ],
+        "price_monthly_1": 1500000,
+        "price_monthly_2": 1700000,
+        "max_occupancy": 2,
+        "image": "assets/images/rooms/Standard Double/IMG_2238.png",
+        "images": [
+            "assets/images/rooms/Standard Double/IMG_2238.png",
+            "assets/images/rooms/Standard Double/IMG_2237.png",
+            "assets/images/rooms/Standard Double/IMG_2236.png",
+            "assets/images/rooms/Standard Double/IMG_2239.png",
+            "assets/images/rooms/Standard Double/IMG_2241.png"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Suite triple",
+        "description": "",
+        "facilities": [
+            "2 bed (6 kaki dan 3 kaki)",
+            "toilet duduk",
+            "lemari rak",
+            "AC",
+            "shower & water heater (tidak ada ember gayung)",
+            "kamar non-token",
+            "TV",
+            "meja dan kursi belajar"
+        ],
+        "price_monthly_1": 2000000,
+        "price_monthly_2": 2500000,
+        "price_monthly_3": 2500000,
+        "max_occupancy": 3,
+        "image": "assets/images/rooms/Suite Triple/IMG_2230.png",
+        "images": [
+            "assets/images/rooms/Suite Triple/IMG_2230.png",
+            "assets/images/rooms/Suite Triple/IMG_2229.png",
+            "assets/images/rooms/Suite Triple/IMG_2228.png",
+            "assets/images/rooms/Suite Triple/IMG_2233.png",
+            "assets/images/rooms/Suite Triple/IMG_2234.png"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Standard single",
+        "description": "",
+        "facilities": [
+            "1 bed (3 kaki)",
+            "toilet duduk",
+            "lemari rak",
+            "AC",
+            "shower & water heater (tidak ada ember gayung)",
+            "kamar token",
+            "TV",
+            "meja dan kursi belajar"
+        ],
+        "price_monthly_1": 1400000,
+        "max_occupancy": 1,
+        "image": "assets/images/rooms/Standard Single/IMG_2230.png",
+        "images": [
+            "assets/images/rooms/Standard Single/IMG_2230.png"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Suite double",
+        "description": "",
+        "facilities": [
+            "1 bed (6 kaki)",
+            "toilet duduk",
+            "shower & water heater (tidak ada ember gayung)",
+            "lemari rak",
+            "AC",
+            "kamar token dan non-token",
+            "TV",
+            "meja dan kursi belajar"
+        ],
+        "price_monthly_1": 1800000,
+        "price_monthly_2": 2000000,
+        "price_nontoken_1": 2000000,
+        "price_nontoken_2": 2200000,
+        "max_occupancy": 2,
+        "image": "assets/images/rooms/Suite Double/IMG_2233.png",
+        "images": [
+            "assets/images/rooms/Suite Double/IMG_2233.png"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Standard twin",
+        "description": "Catatan: Untuk pemesanan kamar ini, harap hubungi Customer Service terlebih dahulu.",
+        "facilities": [
+            "2 bed (3 kaki)",
+            "toilet duduk",
+            "lemari rak",
+            "AC",
+            "shower & water heater (tidak ada ember gayung)",
+            "kamar token",
+            "TV",
+            "meja dan kursi belajar"
+        ],
+        "price_monthly_1": 1400000,
+        "price_monthly_2": 1600000,
+        "max_occupancy": 2,
+        "image": "assets/images/rooms/Standard Twin/90ef4afa-7bed-446e-acbf-75d351dab758.jpg",
+        "images": [
+            "assets/images/rooms/Standard Twin/90ef4afa-7bed-446e-acbf-75d351dab758.jpg",
+            "assets/images/rooms/Standard Twin/IMG_2236.png",
+            "assets/images/rooms/Standard Twin/IMG_2237.png"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Standard A",
+        "description": "",
+        "facilities": [
+            "1 bed (3 kaki)",
+            "lemari kayu",
+            "toilet jongkok",
+            "AC",
+            "ember & gayung (tidak ada water heater)",
+            "kamar token",
+            "TV",
+            "meja dan kursi belajar"
+        ],
+        "price_monthly_1": 1300000,
+        "max_occupancy": 1,
+        "image": "assets/images/rooms/Standard A/IMG_2243.png",
+        "images": [
+            "assets/images/rooms/Standard A/IMG_2243.png",
+            "assets/images/rooms/Standard A/IMG_2244.png",
+            "assets/images/rooms/Standard A/IMG_2242.png"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Standard B",
+        "description": "",
+        "facilities": [
+            "1 bed (2,5 kaki)",
+            "kipas angin",
+            "lemari kayu",
+            "meja belajar",
+            "meja dan kursi belajar",
+            "toilet duduk",
+            "kamar token dan non-token"
+        ],
+        "price_monthly_1": 800000,
+        "price_nontoken_1": 900000,
+        "max_occupancy": 1,
+        "image": "assets/images/rooms/Standard B/IMG_2249.png",
+        "images": [
+            "assets/images/rooms/Standard B/IMG_2249.png",
+            "assets/images/rooms/Standard B/IMG_2245.png",
+            "assets/images/rooms/Standard B/IMG_2247.png",
+            "assets/images/rooms/Standard B/IMG_2248.png",
+            "assets/images/rooms/Standard B/IMG_2246.png"
+        ]
+    }
+]

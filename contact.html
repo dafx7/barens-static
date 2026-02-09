@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Barat Residence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            --Secondary: #A3B18A;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F3ECDC]">
+    <!-- Navbar -->
+    <nav class="bg-[#F3ECDC] shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 lg:px-8 py-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/images/Logo.png" alt="Logo" class="w-10 h-10">
+                    <div class="text-[#344E41] text-lg md:text-xl lg:text-xl font-semibold leading-normal"
+                        style="font-family: 'Lato', sans-serif;">
+                        BARENS
+                    </div>
+                </div>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <div class="block xl:hidden">
+                <button id="menu-toggle" class="text-[#344E41] focus:outline-none focus:ring-2 focus:ring-[#588157]">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <ul id="desktop-menu"
+                class="hidden xl:flex items-center space-x-6 lg:space-x-8 font-semibold text-black text-sm md:text-base lg:text-base leading-normal"
+                style="font-family: 'Open Sans', sans-serif;">
+                <li><a href="index.html" class="hover:text-green-600">Beranda</a></li>
+                <li><a href="rooms.html" class="hover:text-green-600">Tipe Kamar</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd798lFPxVZYTHKvhacsItXUf7ph4bQZIYW7qed8Wyx2EOWPA/viewform"
+                        class="hover:text-green-600">Sewa Lapangan</a></li>
+                <li><a href="location.html" class="hover:text-green-600">Lokasi</a></li>
+                <li><a href="contact.html" class="hover:text-green-600 text-green-700">Hubungi Kami</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden xl:hidden bg-[#F3ECDC] shadow-lg absolute w-full top-[80px] left-0 z-50 transition-all duration-300">
+            <ul class="flex flex-col space-y-4 p-4 text-black font-semibold text-sm leading-normal"
+                style="font-family: 'Open Sans', sans-serif;">
+                <li><a href="index.html" class="hover:text-green-600 block">Beranda</a></li>
+                <li><a href="rooms.html" class="hover:text-green-600 block">Tipe Kamar</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd798lFPxVZYTHKvhacsItXUf7ph4bQZIYW7qed8Wyx2EOWPA/viewform"
+                        class="hover:text-green-600 block">Sewa Lapangan</a></li>
+                <li><a href="location.html" class="hover:text-green-600 block">Lokasi</a></li>
+                <li><a href="contact.html" class="hover:text-green-600 block">Hubungi Kami</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            menuToggle.addEventListener("click", function () {
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            document.addEventListener("click", function (event) {
+                const isClickInsideMenu = mobileMenu.contains(event.target);
+                const isClickOnButton = menuToggle.contains(event.target);
+
+                if (!isClickInsideMenu && !isClickOnButton) {
+                    mobileMenu.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+
+    <main class="pt-20">
+        <section class="relative w-full h-[439px] bg-cover bg-center"
+            style="background-image: url('assets/images/contact-hero.png');">
+            <div class="absolute inset-0"
+                style="background: linear-gradient(90deg, rgba(52, 78, 65, 0.93) 32%, rgba(18, 27, 18, 0.00) 100%);">
+            </div>
+
+            <div class="relative z-10 container mx-auto px-4 lg:px-20 flex flex-col justify-center h-full text-white">
+                <p class="text-sm font-semibold tracking-wider uppercase text-[#A3B18A]">
+                    Beranda > Hubungi Kami
+                </p>
+                <h1 class="mt-2 text-3xl md:text-4xl lg:text-5xl font-bold">
+                    Informasi Kontak
+                </h1>
+                <p class="mt-4 text-base md:text-lg text-[#F3ECDC]">
+                    Kami siap membantu Anda. Jangan ragu untuk menghubungi kami melalui kontak di bawah ini.
+                </p>
+            </div>
+        </section>
+
+        <div class="container mx-auto px-6 lg:px-20 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Informasi Kontak -->
+            <div class="lg:col-span-1">
+                <h2 class="text-[#2D2D2D] text-2xl font-semibold mb-6">MENGAPA MEMILIH KAMI?</h2>
+                <div class="space-y-6 text-[#4D4D4D] text-lg font-light leading-relaxed">
+                    <p>
+                        Barat Residence menawarkan pengalaman hunian yang nyaman, aman, dan strategis di Kota Medan.
+                        Dengan fasilitas yang lengkap dan harga yang terjangkau, kami berkomitmen untuk memberikan
+                        pelayanan terbaik bagi setiap penghuni.
+                    </p>
+                    <p>
+                        Hubungi kami melalui WhatsApp untuk respon cepat, atau kunjungi lokasi kami untuk melihat
+                        langsung
+                        fasilitas yang kami tawarkan.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Kartu Kontak -->
+            <div class="bg-[#F9F9F9] p-8 rounded-lg space-y-6 shadow-md">
+                <div>
+                    <h3 class="text-[#073937] font-semibold text-lg">Alamat</h3>
+                    <p class="text-[#4D4D4D] mt-2">
+                        Jl. Abdul Hakim, Padang Bulan Selayang I, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20155
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-[#073937] font-semibold text-lg">WhatsApp (Fast Response)</h3>
+                    <p class="text-[#4D4D4D] mt-2">
+                        Chat dengan kami langsung untuk info ketersediaan kamar dan booking.
+                    </p>
+                    <ul class="text-[#4D4D4D] mt-4 space-y-3">
+                        <li class="flex items-center gap-2">
+                            <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                            <div>Wisnu: <a href="https://wa.me/6281364185745" target="_blank"
+                                    class="text-[#588157] font-semibold hover:underline">+62 813-6418-5745</a></div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                            <div>Angel: <a href="https://wa.me/628116150275" target="_blank"
+                                    class="text-[#588157] font-semibold hover:underline">+62 811-6150-275</a></div>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div>
+                    <h3 class="text-[#073937] font-semibold text-lg">Email</h3>
+                    <p class="text-[#4D4D4D] mt-2">Email kami di <a href="mailto:baratresidencemedan@gmail.com"
+                            class="text-[#588157] font-semibold hover:underline"> baratresidencemedan@gmail.com</a></p>
+                </div>
+
+                <div class="text-center mt-6 pt-6 border-t border-gray-200">
+                    <p class="text-[#4D4D4D] text-sm">Ikuti kami untuk update terbaru</p>
+                    <div class="flex justify-center space-x-6 mt-4">
+                        <a href="https://www.facebook.com/share/19qDaniSw6/?mibextid=wwXIfr"
+                            class="text-[#588157] text-2xl hover:text-[#6A965F]"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/baratresidence?igsh=aG4zbnd0dWtjdHc5"
+                            class="text-[#588157] text-2xl hover:text-[#6A965F]"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/6281364185745" class="text-[#588157] text-2xl hover:text-[#6A965F]"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="flex flex-col items-start gap-10 bg-[#344E41] px-6 md:px-[50px] lg:px-[100px] py-[100px] pb-[30px]">
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="flex flex-col gap-4 text-left md:text-left">
+                <div class="flex items-center justify-start md:justify-start gap-3 pb-2">
+                    <img src="assets/images/Logo-1.png" alt="Logo BARENS" class="w-[42px] h-[38px]" />
+                    <h1 class="text-[#F3ECDC] font-lato text-[24px] font-semibold leading-none">BARENS</h1>
+                </div>
+                <p
+                    class="text-[rgba(255,255,255,0.75)] font-opensans text-[16px] md:text-[18px] font-normal leading-[26px] md:leading-[29px]">
+                    Kos-Kosan Nyaman dengan Lokasi Strategis dan Fasilitas Lengkap untuk Hunian Ideal Anda
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-4 lg:pl-16 text-left md:text-left">
+                <h3 class="text-[#F3ECDC] font-lato text-[24px] font-semibold leading-none pb-2">Site Links</h3>
+                <ul
+                    class="text-[rgba(255,255,255,0.75)] font-opensans text-[16px] md:text-[18px] font-normal leading-[26px] md:leading-[29px]">
+                    <li><a href="#" class="hover:underline"><i class="fas fa-caret-right p-2"></i> Syarat dan
+                            ketentuan</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col gap-4 text-left md:text-left">
+                <h3 class="text-[#F3ECDC] font-lato text-[24px] font-semibold leading-none">Tetap Bersama Kami</h3>
+                <ul
+                    class="text-[rgba(255,255,255,0.75)] font-opensans text-[16px] md:text-[18px] font-normal leading-[26px] md:leading-[29px] space-y-2">
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt p-2 pt-1"></i>
+                        <span class="pl-1">Jl. Abdul Hakim, Padang Bulan Selayang I,<br>Kec. Medan Selayang, Kota Medan,
+                            Sumatera Utara 20155</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-envelope p-2"></i>
+                        <span class="pl-1">baratresidencemedan@gmail.com</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-phone-alt p-2 pt-1"></i>
+                        <div class="pl-1">
+                            <div>Wisnu: <a href="https://wa.me/6281364185745" target="_blank"
+                                    class="hover:underline text-white">+62 813-6418-5745</a></div>
+                            <div>Angel: <a href="https://wa.me/628116150275" target="_blank"
+                                    class="hover:underline text-white">+62 811-6150-275</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w-full flex flex-col items-center border-t border-[rgba(255,255,255,0.30)] pt-[30px]">
+            <p class="text-[#F3ECDC] text-center text-sm uppercase font-semibold tracking-[2.25px]">
+                © 2025 Barat Residence. Semua Hak Dilindungi
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

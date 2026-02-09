@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section - Barat Residence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            --Secondary: #A3B18A;
+        }
+
+        .hero-heading-1 {
+            color: #F3ECDC;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .hero-heading-2 {
+            color: #A3B18A;
+            font-size: 55px;
+            font-weight: 600;
+        }
+
+        .hero-subheading {
+            color: var(--Secondary, #A3B18A);
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2.25px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F3ECDC]">
+    <!-- Navbar -->
+    <nav class="bg-[#F3ECDC] shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 lg:px-8 py-6 flex justify-between items-center">
+
+            <!-- Logo & Brand Name -->
+            <a href="index.html" class="flex items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/images/Logo.png" alt="Logo" class="w-10 h-10">
+                    <div class="text-[#344E41] text-lg md:text-xl lg:text-xl font-semibold leading-normal"
+                        style="font-family: 'Lato', sans-serif;">
+                        BARENS
+                    </div>
+                </div>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <div class="block xl:hidden">
+                <button id="menu-toggle" class="text-[#344E41] focus:outline-none focus:ring-2 focus:ring-[#588157]">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul id="desktop-menu"
+                class="hidden xl:flex items-center space-x-6 lg:space-x-8 font-semibold text-black text-sm md:text-base lg:text-base leading-normal"
+                style="font-family: 'Open Sans', sans-serif;">
+                <li><a href="index.html" class="hover:text-green-600">Beranda</a></li>
+                <li><a href="rooms.html" class="hover:text-green-600">Tipe Kamar</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd798lFPxVZYTHKvhacsItXUf7ph4bQZIYW7qed8Wyx2EOWPA/viewform"
+                        class="hover:text-green-600">Sewa Lapangan</a></li>
+                <li><a href="location.html" class="hover:text-green-600">Lokasi</a></li>
+                <!-- <li><a href="faq.html" class="hover:text-green-600">FAQ</a></li> -->
+                <li><a href="contact.html" class="hover:text-green-600">Hubungi Kami</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden xl:hidden bg-[#F3ECDC] shadow-lg absolute w-full top-[80px] left-0 z-50 transition-all duration-300">
+            <ul class="flex flex-col space-y-4 p-4 text-black font-semibold text-sm leading-normal"
+                style="font-family: 'Open Sans', sans-serif;">
+                <li><a href="index.html" class="hover:text-green-600 block">Beranda</a></li>
+                <li><a href="rooms.html" class="hover:text-green-600 block">Tipe Kamar</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd798lFPxVZYTHKvhacsItXUf7ph4bQZIYW7qed8Wyx2EOWPA/viewform"
+                        class="hover:text-green-600 block">Sewa Lapangan</a></li>
+                <li><a href="location.html" class="hover:text-green-600 block">Lokasi</a></li>
+                <!-- <li><a href="faq.html" class="hover:text-green-600 block">FAQ</a></li> -->
+                <li><a href="contact.html" class="hover:text-green-600 block">Hubungi Kami</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            menuToggle.addEventListener("click", function () {
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            document.addEventListener("click", function (event) {
+                const isClickInsideMenu = mobileMenu.contains(event.target);
+                const isClickOnButton = menuToggle.contains(event.target);
+
+                if (!isClickInsideMenu && !isClickOnButton) {
+                    mobileMenu.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="bg-[#F3ECDC]">
+            <div class="relative w-full min-h-screen md:h-[500px] lg:h-[600px] bg-cover bg-center"
+                style="background-image: url('assets/images/Tampak-depan.jpg');">
+
+                <!-- Gradient Mobile -->
+                <div class="absolute inset-0 w-full h-full lg:hidden"
+                    style="background: linear-gradient(180deg, rgba(52, 78, 65, 0.9) 0%, rgba(52, 78, 65, 0.4) 50%, rgba(18, 27, 18, 0) 100%);">
+                </div>
+
+                <!-- Gradient Desktop -->
+                <div class="absolute inset-0 hidden lg:block"
+                    style="background: linear-gradient(90deg, rgba(52, 78, 65, 0.93) 32%, rgba(18, 27, 18, 0.00) 100%)">
+                </div>
+
+                <!-- Content -->
+                <div
+                    class="absolute inset-0 flex flex-col justify-center px-6 md:px-10 lg:px-20 space-y-4 text-center lg:text-left">
+                    <p class="text-sm md:text-base lg:text-lg text-white font-semibold tracking-[2.25px] uppercase">
+                        Tempatnya sewa kos-kosan terbaik Di Medan
+                    </p>
+                    <h1 class="text-2xl md:text-4xl lg:text-5xl text-white font-semibold">
+                        Selamat Datang di
+                    </h1>
+                    <h2 class="text-3xl md:text-5xl lg:text-[55px] text-[#A3B18A] font-semibold">
+                        Barat Residence
+                    </h2>
+                    <p class="text-sm md:text-lg lg:text-xl text-white">
+                        Tempat Tinggal Nyaman Dan Strategis Di Dekat Kampus USU
+                    </p>
+                    <div
+                        class="flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0 justify-center lg:justify-start">
+                        <a href="rooms.html"
+                            class="flex items-center justify-center px-6 md:px-10 py-4 md:py-5 rounded-[30px] bg-[#588157] text-[#F3ECDC] text-sm md:text-base font-semibold uppercase tracking-[2.25px] hover:bg-[#6A965F] hover:cursor-pointer transition">
+                            Lihat Kamar
+                        </a>
+
+                        <a href="https://wa.me/6281364185745" target="_blank"
+                            class="flex items-center justify-center px-6 md:px-10 py-4 md:py-5 rounded-[30px] bg-[#F3ECDC] text-[#588157] text-sm md:text-base font-semibold uppercase tracking-[2.25px] hover:bg-[#E5D9C7] hover:cursor-pointer transition">
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fasilitas Section -->
+        <section class="bg-[#F3ECDC] py-16">
+            <div
+                class="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-start lg:items-center gap-12 lg:gap-16">
+                <!-- Keterangan Fasilitas -->
+                <div class="flex-1 order-1 lg:order-1">
+                    <h3 class="text-[#588157] text-sm font-semibold uppercase tracking-wider mb-4">Fasilitas Umum</h3>
+                    <h2 class="text-[#2D2D2D] font-semibold text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] uppercase leading-relaxed max-w-full lg:max-w-[579px] mb-6"
+                        style="font-family: 'Open Sans', sans-serif;">
+                        Beragam Fasilitas Lengkap untuk Mendukung Kenyamanan dan Kebutuhan Anda di Barat Residence
+                    </h2>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8 text-[#2D2D2D] font-semibold text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] lg:leading-[29px]"
+                        style="font-family: 'Open Sans', sans-serif;">
+                        <div class="flex items-center gap-4"><i class="fas fa-parking text-[#588157] text-xl"></i>
+                            Tempat Parkir</div>
+                        <div class="flex items-center gap-4"><i class="fas fa-users text-[#588157] text-xl"></i> Ruang
+                            Bersama</div>
+                        <div class="flex items-center gap-4"><i class="fas fa-utensils text-[#588157] text-xl"></i>
+                            Dapur Umum</div>
+                        <div class="flex items-center gap-4"><i class="fas fa-video text-[#588157] text-xl"></i> CCTV
+                        </div>
+                        <div class="flex items-center gap-4"><i class="fas fa-wifi text-[#588157] text-xl"></i> Wi-Fi
+                        </div>
+                        <div class="flex items-center gap-4"><i class="fas fa-bed text-[#588157] text-xl"></i> Sprei 1x
+                            (Di Awal Masuk)</div>
+                        <div class="flex items-center gap-4"><i class="fas fa-user-shield text-[#588157] text-xl"></i>
+                            Penjaga Kos 24 Jam</div>
+                        <div class="flex items-center gap-4"><i class="fas fa-tshirt text-[#588157] text-xl"></i>
+                            Jemuran</div>
+                    </div>
+                </div>
+
+                <!-- Slider Gambar -->
+                <div x-data="{ activeSlide: 0 }"
+                    class="relative flex-1 max-w-full lg:max-w-[800px] h-[300px] md:h-[400px] lg:h-[450px] bg-[#F3ECDC] border-[10px] border-[#F3ECDC] rounded-[30px] shadow-lg overflow-hidden order-2 lg:order-2">
+                    <div class="flex transition-transform duration-500"
+                        :style="`transform: translateX(-${activeSlide * 100}%);`">
+                        <div class="w-full flex-shrink-0">
+                            <img src="assets/images/Lobby.jpg" alt="Fasilitas 1" class="object-cover w-full h-full">
+                        </div>
+                        <div class="w-full flex-shrink-0">
+                            <img src="assets/images/Parkiran-mobil.jpg" alt="Fasilitas 2"
+                                class="object-cover w-full h-full">
+                        </div>
+                        <div class="w-full flex-shrink-0">
+                            <img src="assets/images/Dapur.jpg" alt="Fasilitas 3" class="object-cover w-full h-full">
+                        </div>
+                    </div>
+
+                    <button @click="activeSlide = (activeSlide === 0) ? 2 : activeSlide - 1"
+                        class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-[#588157] text-white p-2 md:p-3 rounded-full shadow-lg">
+                        &#8592;
+                    </button>
+                    <button @click="activeSlide = (activeSlide === 2) ? 0 : activeSlide + 1"
+                        class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#588157] text-white p-2 md:p-3 rounded-full shadow-lg">
+                        &#8594;
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keunggulan Section -->
+        <section class="bg-[#F3ECDC] py-12 px-5">
+            <div class="text-center mb-10">
+                <h3 class="text-[#588157] text-sm font-semibold uppercase tracking-wide">
+                    Keunggulan Yang Kami Berikan
+                </h3>
+                <h2 class="text-[#2D2D2D] text-2xl md:text-3xl font-bold">
+                    Keunggulan Barat Residence
+                </h2>
+            </div>
+            <div class="flex flex-wrap justify-center gap-5">
+                <!-- Card 1 -->
+                <div
+                    class="flex flex-col items-center w-full md:w-[393px] p-6 md:py-24 md:px-7 rounded-[30px] border-[10px] border-[#F3ECDC] bg-[#344E41] shadow-lg">
+                    <div class="w-[100px] h-[100px] md:w-[140px] md:h-[140px] rounded-full border-[8px] md:border-[10px] border-[#F3ECDC] bg-cover bg-center mb-5 shadow-lg"
+                        style="background-image: url('assets/images/location.jpg');">
+                    </div>
+                    <h3 class="text-[#F3ECDC] text-lg md:text-xl font-semibold mb-4">Lokasi Strategis</h3>
+                    <p class="text-[rgba(255,255,255,0.75)] text-sm md:text-base text-center leading-relaxed">
+                        Terletak di pusat kota yang mudah diakses, dekat dengan kampus dan fasilitas umum lainnya.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="flex flex-col items-center w-full md:w-[393px] p-6 md:py-24 md:px-7 rounded-[30px] border-[10px] border-[#F3ECDC] bg-[#344E41] shadow-lg">
+                    <div class="w-[100px] h-[100px] md:w-[140px] md:h-[140px] rounded-full border-[8px] md:border-[10px] border-[#F3ECDC] bg-cover bg-center mb-5 shadow-lg"
+                        style="background-image: url('assets/images/money.png');">
+                    </div>
+                    <h3 class="text-[#F3ECDC] text-lg md:text-xl font-semibold mb-4">Harga Terjangkau</h3>
+                    <p class="text-[rgba(255,255,255,0.75)] text-sm md:text-base text-center leading-relaxed">
+                        Menawarkan hunian berkualitas dengan harga yang pas di kantong, cocok untuk mahasiswa dan
+                        pekerja.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="flex flex-col items-center w-full md:w-[393px] p-6 md:py-24 md:px-7 rounded-[30px] border-[10px] border-[#F3ECDC] bg-[#344E41] shadow-lg">
+                    <div class="w-[100px] h-[100px] md:w-[140px] md:h-[140px] rounded-full border-[8px] md:border-[10px] border-[#F3ECDC] bg-cover bg-center mb-5 shadow-lg"
+                        style="background-image: url('assets/images/facility-icon.png');">
+                    </div>
+                    <h3 class="text-[#F3ECDC] text-lg md:text-xl font-semibold mb-4">Fasilitas Lengkap</h3>
+                    <p class="text-[rgba(255,255,255,0.75)] text-sm md:text-base text-center leading-relaxed">
+                        Dilengkapi dengan berbagai fasilitas modern untuk memenuhi kebutuhan harian Anda dengan mudah.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimoni Section -->
+        <section class="bg-[#344E41] py-16 relative" x-data="{ current: 0, testimonials: [
+            {
+                name: 'Bernando Sianipar',
+                role: 'Mahasiswa USU',
+                text: '“ Tinggal di Barat Residence nyaman. Interior bagus, lokasi cenderung aman, juga strategis karena cukup dekat dengan USU. Yang paling saya sukai adalah sirkulasi udara yang baik karena setiap kamar dilengkapi jendela dan kamar mandi dalam. “'
+            },
+            {
+                name: 'Azkal Azkia',
+                role: 'Mahasiswa USU',
+                text: '“ Menurut pengalaman saya, ngekos di Barat Residence sangat nyaman dan tempatnya lumayan strategis bagi mahasiswa untuk pergi ke kampus. Selain itu, lingkungan yang selalu dibersihkan setiap pagi dan sore membuat suasananya semakin nyaman. “'
+            },
+            {
+                name: 'Muhammad Siddik',
+                role: 'Mahasiswa USU',
+                text: '“ Menurut saya, tinggal di Barat Residence nyaman. Harga kosnya juga ga mahal-mahal kali, kamarnya pun luas lengkap fasilitasnya. Dekat dengan kampus, dan suasana kosnya bersih karena dibersihkan setiap hari. “'
+            }
+        ] }">
+            <div class="container mx-auto px-6 lg:px-20 flex flex-col gap-10">
+                <div class="text-center">
+                    <h3 class="text-[#A3B18A] text-sm font-semibold uppercase tracking-widest">Fasilitas Umum</h3>
+                    <h2 class="text-[#F3ECDC] text-2xl md:text-3xl lg:text-4xl font-semibold uppercase mt-2">Testimoni
+                        Penghuni Kos-Kosan Barat Residence</h2>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                    <h3 class="text-white text-2xl md:text-3xl font-semibold capitalize"
+                        x-text="testimonials[current].name"></h3>
+                    <p class="text-white text-sm md:text-base font-normal capitalize"
+                        x-text="testimonials[current].role"></p>
+                    <p class="text-white text-sm md:text-base italic font-light leading-relaxed max-w-3xl mt-4"
+                        x-text="testimonials[current].text"></p>
+
+                    <div class="mt-6 flex gap-4">
+                        <button
+                            class="w-[45px] h-[45px] flex items-center justify-center bg-[#588157] text-[#F3ECDC] text-xl rounded-full shadow-lg hover:bg-[#6A965F]"
+                            @click="current = (current === 0) ? testimonials.length - 1 : current - 1">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button
+                            class="w-[45px] h-[45px] flex items-center justify-center bg-[#588157] text-[#F3ECDC] text-xl rounded-full shadow-lg hover:bg-[#6A965F]"
+                            @click="current = (current === testimonials.length - 1) ? 0 : current + 1">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-[#F3ECDC]">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-20">
+                <div class="relative flex items-center justify-center h-[300px] sm:h-[350px] md:h-[400px] rounded-[30px] overflow-hidden bg-cover bg-center"
+                    style="background-image: linear-gradient(90deg, rgba(52, 78, 65, 1) 0%, rgba(0, 0, 0, 0.11) 100%), url('assets/images/bg-cta-image.png');">
+                    <div class="text-center px-4 md:px-8 lg:px-12 max-w-[872px] mx-auto">
+                        <h1
+                            class="text-[#F3ECDC] text-[20px] sm:text-[32px] md:text-[32px] lg:text-[40px] font-semibold uppercase leading-normal font-['Open_Sans'] mb-4">
+                            Tempati Kos-Kosan Terbaik Sesuai Impian Anda di Barat Residence
+                        </h1>
+                        <p class="text-[#F3ECDC] text-sm md:text-base font-light mb-8">
+                            Tersedia banyak sekali kos-kosan terbaik yang siap Anda tempati
+                        </p>
+                        <a href="https://wa.me/6281364185745" target="_blank"
+                            class="inline-flex items-center justify-center px-8 py-3 md:px-10 md:py-4 rounded-[30px] text-sm md:text-base font-semibold uppercase tracking-wider bg-[#588157] text-[#F3ECDC] hover:bg-[#6A965F] transition">
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="flex flex-col items-start gap-10 bg-[#344E41] px-6 md:px-[50px] lg:px-[100px] py-[100px] pb-[30px]">
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="flex flex-col gap-4 text-left md:text-left">
+                <div class="flex items-center justify-start md:justify-start gap-3 pb-2">
+                    <img src="assets/images/Logo-1.png" alt="Logo BARENS" class="w-[42px] h-[38px]" />
+                    <h1 class="text-[#F3ECDC] font-lato text-[24px] font-semibold leading-none">BARENS</h1>
+                </div>
+                <p
+                    class="text-[rgba(255,255,255,0.75)] font-opensans text-[16px] md:text-[18px] font-normal leading-[26px] md:leading-[29px]">
+                    Kos-Kosan Nyaman dengan Lokasi Strategis dan Fasilitas Lengkap untuk Hunian Ideal Anda
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-4 lg:pl-16 text-left md:text-left">
+                <h3 class="text-[#F3ECDC] font-lato text-[24px] font-semibold leading-none pb-2">Site Links</h3>
+                <ul
+                    class="text-[rgba(255,255,255,0.75)] font-opensans text-[16px] md:text-[18px] font-normal leading-[26px] md:leading-[29px]">
+                    <li><a href="#" class="hover:underline"><i class="fas fa-caret-right p-2"></i> Syarat dan
+                            ketentuan</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col gap-4 text-left md:text-left">
+                <h3 class="text-[#F3ECDC] font-lato text-[24px] font-semibold leading-none">Tetap Bersama Kami</h3>
+                <ul
+                    class="text-[rgba(255,255,255,0.75)] font-opensans text-[16px] md:text-[18px] font-normal leading-[26px] md:leading-[29px] space-y-2">
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt p-2 pt-1"></i>
+                        <span class="pl-1">Jl. Abdul Hakim, Padang Bulan Selayang I,<br>Kec. Medan Selayang, Kota Medan,
+                            Sumatera Utara 20155</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-envelope p-2"></i>
+                        <span class="pl-1">baratresidencemedan@gmail.com</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-phone-alt p-2 pt-1"></i>
+                        <div class="pl-1">
+                            <div>Wisnu: <a href="https://wa.me/6281364185745" target="_blank"
+                                    class="hover:underline text-white">+62 813-6418-5745</a></div>
+                            <div>Angel: <a href="https://wa.me/628116150275" target="_blank"
+                                    class="hover:underline text-white">+62 811-6150-275</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w-full flex flex-col items-center border-t border-[rgba(255,255,255,0.30)] pt-[30px]">
+            <p class="text-[#F3ECDC] text-center text-sm uppercase font-semibold tracking-[2.25px]">
+                © 2025 Barat Residence. Semua Hak Dilindungi
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

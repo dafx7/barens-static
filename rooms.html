@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Kamar - Barat Residence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
+    <script src="assets/js/main.js"></script>
+
+    <style>
+        :root {
+            --Primary: #344E41;
+            --Accent: #588157;
+            --Secondary: #A3B18A;
+            --Bg: #F3ECDC;
+            --Cream-Light: #FFFBF2;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--Bg);
+            color: var(--Primary);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .brand-font {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(255, 251, 242, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(237, 232, 218, 0.5);
+        }
+
+        .room-card {
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+        }
+
+        .room-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(52, 78, 65, 0.1);
+        }
+
+        .btn-premium {
+            background: var(--Accent);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(88, 129, 87, 0.3);
+        }
+
+        .btn-premium:hover {
+            background: #4a6d49;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(88, 129, 87, 0.4);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--Bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--Secondary);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--Accent);
+        }
+
+        .price-badge {
+            background: rgba(163, 177, 138, 0.15);
+            border-left: 3px solid var(--Secondary);
+        }
+    </style>
+</head>
+
+<body x-data="roomList">
+    <!-- Navbar -->
+    <nav class="bg-[#F3ECDC] shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 lg:px-8 py-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/images/Logo.png" alt="Logo" class="w-10 h-10">
+                    <div class="text-[#344E41] text-lg md:text-xl lg:text-xl font-semibold leading-normal"
+                        style="font-family: 'Lato', sans-serif;">
+                        BARENS
+                    </div>
+                </div>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <div class="block xl:hidden">
+                <button id="menu-toggle" class="text-[#344E41] focus:outline-none focus:ring-2 focus:ring-[#588157]">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <ul id="desktop-menu"
+                class="hidden xl:flex items-center space-x-6 lg:space-x-8 font-semibold text-black text-sm md:text-base lg:text-base leading-normal"
+                style="font-family: 'Open Sans', sans-serif;">
+                <li><a href="index.html" class="hover:text-green-600">Beranda</a></li>
+                <li><a href="rooms.html" class="hover:text-green-600 text-green-700">Tipe Kamar</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd798lFPxVZYTHKvhacsItXUf7ph4bQZIYW7qed8Wyx2EOWPA/viewform"
+                        class="hover:text-green-600" target="_blank">Sewa Lapangan</a></li>
+                <li><a href="location.html" class="hover:text-green-600">Lokasi</a></li>
+                <li><a href="contact.html" class="hover:text-green-600">Hubungi Kami</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden xl:hidden bg-[#F3ECDC] shadow-lg absolute w-full top-[80px] left-0 z-50 transition-all duration-300">
+            <ul class="flex flex-col space-y-4 p-4 text-black font-semibold text-sm leading-normal"
+                style="font-family: 'Open Sans', sans-serif;">
+                <li><a href="index.html" class="hover:text-green-600 block">Beranda</a></li>
+                <li><a href="rooms.html" class="hover:text-green-600 block">Tipe Kamar</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd798lFPxVZYTHKvhacsItXUf7ph4bQZIYW7qed8Wyx2EOWPA/viewform"
+                        class="hover:text-green-600 block" target="_blank">Sewa Lapangan</a></li>
+                <li><a href="location.html" class="hover:text-green-600 block">Lokasi</a></li>
+                <li><a href="contact.html" class="hover:text-green-600 block">Hubungi Kami</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative w-full h-[350px] md:h-[439px] flex items-center overflow-hidden">
+        <div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 scale-105"
+            style="background-image: url('assets/images/rooms/Standard Double/IMG_2236.png');">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#344E41]/95 via-[#344E41]/70 to-transparent"></div>
+
+        <div class="relative z-10 container mx-auto px-6 lg:px-20 animate-fade-in-up">
+            <span
+                class="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-[#A3B18A] text-xs font-bold tracking-widest uppercase mb-4">
+                Pilihan Terbaik
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Pilih Hunian <br /> <span class="text-[#A3B18A]">Ideal Anda</span>
+            </h1>
+            <p class="max-w-xl text-lg text-white/80 leading-relaxed font-light">
+                Temukan kenyamanan sejati dengan berbagai pilihan tipe kamar yang dirancang khusus untuk produktivitas
+                dan istirahat maksimal.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Bar (Floating) -->
+    <div class="container mx-auto px-6 relative z-30 -mt-10 lg:-mt-12">
+        <div class="glass-panel p-6 lg:p-8 rounded-[40px] shadow-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Price Filter -->
+                <div class="relative group">
+                    <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 ml-4">Filter
+                        Harga</label>
+                    <div class="relative">
+                        <i
+                            class="fas fa-money-bill-wave absolute left-4 top-1/2 -translate-y-1/2 text-gray-300 group-hover:text-[#A3B18A] transition-colors"></i>
+                        <select x-model="filters.price" @change="applyFilters()"
+                            class="w-full pl-12 pr-10 py-4 bg-white/50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#A3B18A] appearance-none cursor-pointer text-sm font-semibold transition-all">
+                            <option value="">Semua Harga</option>
+                            <option value="1">Di bawah 1 Juta</option>
+                            <option value="2">1 Juta - 2 Juta</option>
+                            <option value="3">Diatas 2 Juta</option>
+                        </select>
+                        <i
+                            class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-[10px] pointer-events-none"></i>
+                    </div>
+                </div>
+
+                <!-- Type Filter -->
+                <div class="relative group">
+                    <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 ml-4">Jenis
+                        Listrik</label>
+                    <div class="relative">
+                        <i
+                            class="fas fa-bolt absolute left-4 top-1/2 -translate-y-1/2 text-gray-300 group-hover:text-[#A3B18A] transition-colors"></i>
+                        <select x-model="filters.type" @change="applyFilters()"
+                            class="w-full pl-12 pr-10 py-4 bg-white/50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#A3B18A] appearance-none cursor-pointer text-sm font-semibold transition-all">
+                            <option value="">Semua Jenis</option>
+                            <option value="token">Token</option>
+                            <option value="non-token">Non-Token</option>
+                        </select>
+                        <i
+                            class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-[10px] pointer-events-none"></i>
+                    </div>
+                </div>
+
+                <!-- Occupancy Filter -->
+                <div class="relative group">
+                    <label
+                        class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 ml-4">Kapasitas</label>
+                    <div class="relative">
+                        <i
+                            class="fas fa-user-group absolute left-4 top-1/2 -translate-y-1/2 text-gray-300 group-hover:text-[#A3B18A] transition-colors"></i>
+                        <select x-model="filters.occupancy" @change="applyFilters()"
+                            class="w-full pl-12 pr-10 py-4 bg-white/50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#A3B18A] appearance-none cursor-pointer text-sm font-semibold transition-all">
+                            <option value="">Semua Kapasitas</option>
+                            <option value="1">1 Penghuni</option>
+                            <option value="2">2 Penghuni</option>
+                            <option value="3">3 Penghuni</option>
+                        </select>
+                        <i
+                            class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-[10px] pointer-events-none"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="py-24">
+        <div class="container mx-auto px-6 lg:px-20">
+            <div class="grid grid-cols-1 gap-12">
+                <template x-for="room in filteredRooms" :key="room.id">
+                    <div
+                        class=" room-card flex flex-col lg:flex-row bg-white rounded-[40px] overflow-hidden border border-gray-50 bg-gradient-to-br from-white to-[#F9F7F2]">
+                        <!-- Image Container -->
+                        <div class="w-full lg:w-[45%] h-[300px] lg:h-auto overflow-hidden relative group"
+                            @click="openModal(room.images)">
+                            <img :src="room.image" :alt="room.name"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                                <span
+                                    class="bg-white/90 px-6 py-2 rounded-full text-black font-semibold text-sm shadow-xl">
+                                    <i class="fas fa-search-plus mr-2"></i> Lihat Galeri
+                                </span>
+                            </div>
+                            <!-- Type Badge Overlay -->
+                            <div class="absolute top-6 left-6 flex flex-col gap-2">
+                                <template x-if="room.facilities.join(' ').toLowerCase().includes('token')">
+                                    <span
+                                        class="px-4 py-1.5 bg-white/95 backdrop-blur rounded-full text-[10px] font-bold uppercase tracking-wider text-[#344E41] shadow-sm">
+                                        <i class="fas fa-bolt-lightning text-yellow-500 mr-1.5"></i> Token
+                                    </span>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- Content Container -->
+                        <div class="w-full lg:w-[55%] p-8 lg:p-12 flex flex-col">
+                            <div
+                                class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                                <h2 class="text-3xl font-bold tracking-tight text-[#344E41]" x-text="room.name"></h2>
+                                <div class="flex items-center gap-2">
+                                    <template x-for="n in room.max_occupancy">
+                                        <i class="fas fa-user text-xs text-[#A3B18A]"></i>
+                                    </template>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-500 font-light mb-8 leading-relaxed italic"
+                                x-text="room.description || 'Pilihan hunian nyaman untuk kenyamanan Anda sehari-hari.'">
+                            </p>
+
+                            <!-- Facilities -->
+                            <div class="mb-10">
+                                <h3 class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-4">
+                                    Fasilitas Unggulan</h3>
+                                <div class="flex flex-wrap gap-x-6 gap-y-3">
+                                    <template x-for="facility in room.facilities" :key="facility">
+                                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                                            <i class="fas fa-check-circle text-[#A3B18A] text-[10px]"></i>
+                                            <span x-text="facility"></span>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+
+                            <div
+                                class="mt-auto pt-8 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-end sm:items-center gap-8">
+                                <!-- Price Info -->
+                                <div class="w-full sm:w-auto space-y-3">
+                                    <h3 class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Estimasi
+                                        Sewa</h3>
+
+                                    <div class="space-y-2">
+                                        <!-- Token Price List -->
+                                        <template x-if="room.price_monthly_1">
+                                            <div
+                                                class="p-4 price-badge rounded-2xl flex justify-between items-center gap-10">
+                                                <span class="text-xs font-bold text-[#344E41]/60">1 Orang</span>
+                                                <span class="text-xl font-bold text-[#344E41]"
+                                                    x-text="'Rp.' + formatPrice(room.price_monthly_1)"></span>
+                                            </div>
+                                        </template>
+
+                                        <!-- Non-Token Label Display If Any -->
+                                        <template x-if="room.price_nontoken_1">
+                                            <div
+                                                class="p-3 bg-gray-50/50 rounded-2xl flex justify-between items-center gap-10 border border-gray-50">
+                                                <span class="text-xs font-medium text-gray-400 italic">Opsi
+                                                    Non-Token:</span>
+                                                <span class="text-sm font-bold text-gray-400"
+                                                    x-text="'Rp.' + formatPrice(room.price_nontoken_1)"></span>
+                                            </div>
+                                        </template>
+
+                                        <template x-if="room.price_monthly_2">
+                                            <div class="text-[10px] text-gray-400 px-4">
+                                                *Opsi multihome tersedia mulai dari <span
+                                                    class="font-bold text-gray-500"
+                                                    x-text="'Rp. ' + formatPrice(room.price_monthly_2)"></span>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+
+                                <a href="https://wa.me/6281364185745" target="_blank"
+                                    class="w-full sm:w-auto px-10 py-5 rounded-full btn-premium flex items-center justify-center gap-3 font-bold text-sm uppercase tracking-widest whitespace-nowrap">
+                                    <i class="fab fa-whatsapp text-lg"></i> Booking Sekarang
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Empty State -->
+                <template x-if="filteredRooms.length === 0">
+                    <div class="text-center py-20 bg-white/30 rounded-[40px] border border-dashed border-gray-200">
+                        <div
+                            class="w-24 h-24 bg-[#A3B18A]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-search text-3xl text-[#A3B18A]"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-[#344E41] mb-2">Tidak Menemukan Kamar?</h2>
+                        <p class="text-gray-500 font-light">Coba sesuaikan filter pencarian Anda atau hubungi kami untuk
+                            bantuan lebih lanjut.</p>
+                        <button @click="filters = {price: '', type: '', occupancy: ''}; applyFilters()"
+                            class="mt-8 text-sm font-bold text-[#588157] underline underline-offset-8">
+                            Reset Semua Filter
+                        </button>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div x-show="showModal" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+        class="fixed inset-0 z-[100] flex items-center justify-center p-4 lg:p-12 bg-black/95" style="display: none;"
+        @keydown.escape.window="closeModal()">
+
+        <!-- Close -->
+        <button @click="closeModal()"
+            class="absolute top-10 right-10 text-white hover:text-[#A3B18A] transition-colors z-[110]">
+            <i class="fas fa-times text-4xl"></i>
+        </button>
+
+        <!-- Gallery Wrapper -->
+        <div class="relative w-full h-full flex flex-col">
+            <!-- Main Display -->
+            <div class="flex-1 relative flex items-center justify-center">
+                <!-- Navigation -->
+                <button @click="prevImage()" x-show="currentRoomImages.length > 1"
+                    class="absolute left-0 text-white/50 hover:text-white transition-all hover:scale-125 z-[105] p-6">
+                    <i class="fas fa-chevron-left text-5xl"></i>
+                </button>
+
+                <img :src="currentRoomImages[currentImageIndex]"
+                    class="max-w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl transition-all duration-500 animate-fade-in">
+
+                <button @click="nextImage()" x-show="currentRoomImages.length > 1"
+                    class="absolute right-0 text-white/50 hover:text-white transition-all hover:scale-125 z-[105] p-6">
+                    <i class="fas fa-chevron-right text-5xl"></i>
+                </button>
+            </div>
+
+            <!-- Thumbnails Strip -->
+            <div class="h-32 flex justify-center items-center gap-3 overflow-x-auto pb-6">
+                <template x-for="(img, idx) in currentRoomImages" :key="idx">
+                    <div @click="currentImageIndex = idx"
+                        class="w-20 h-20 rounded-xl overflow-hidden cursor-pointer transition-all border-2"
+                        :class="currentImageIndex === idx ? 'border-[#A3B18A] scale-110 shadow-lg' : 'border-transparent opacity-40 hover:opacity-100 hover:scale-105'">
+                        <img :src="img" class="w-full h-full object-cover">
+                    </div>
+                </template>
+            </div>
+
+            <!-- Counter -->
+            <div
+                class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md px-4 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-[0.3em]">
+                <span x-text="currentImageIndex + 1"></span> / <span x-text="currentRoomImages.length"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="flex flex-col items-start gap-10 bg-[#344E41] px-6 md:px-[50px] lg:px-[100px] py-[100px] pb-[30px]">
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="flex flex-col gap-4 text-left md:text-left text-white/90">
+                <div class="flex items-center justify-start md:justify-start gap-3 pb-2">
+                    <img src="assets/images/Logo-1.png" alt="Logo BARENS" class="w-[42px] h-[38px]" />
+                    <h1 class="text-[#F3ECDC] font-lato text-[24px] font-semibold leading-none">BARENS</h1>
+                </div>
+                <p class="text-sm font-light leading-relaxed opacity-70">
+                    Hunian kos-kosan premium di Medan dengan standar keamanan dan kenyamanan tinggi. Memberikan
+                    pengalaman tinggal yang tenang dan produktif.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-4 lg:pl-16 text-left md:text-left text-white/90">
+                <h3 class="text-[#F3ECDC] font-semibold text-lg pb-2">Tautan Cepat</h3>
+                <ul class="text-sm font-light space-y-3 opacity-70">
+                    <li><a href="index.html" class="hover:text-[#A3B18A] transition-colors"><i
+                                class="fas fa-chevron-right text-[10px] mr-2"></i> Beranda</a></li>
+                    <li><a href="location.html" class="hover:text-[#A3B18A] transition-colors"><i
+                                class="fas fa-chevron-right text-[10px] mr-2"></i> Lokasi Strategis</a></li>
+                    <li><a href="contact.html" class="hover:text-[#A3B18A] transition-colors"><i
+                                class="fas fa-chevron-right text-[10px] mr-2"></i> Hubungi Admin</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col gap-4 text-left md:text-left text-white/90">
+                <h3 class="text-[#F3ECDC] font-semibold text-lg">Informasi Hubungi</h3>
+                <ul class="text-sm font-light space-y-4 opacity-70">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-[#A3B18A] mt-1"></i>
+                        <span>Jl. Abdul Hakim, Padang Bulan Selayang I, Medan Selayang, Medan 20155</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-[#A3B18A]"></i>
+                        <span>baratresidencemedan@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w-full flex flex-col items-center border-t border-white/10 pt-[30px]">
+            <p class="text-[#F3ECDC]/50 text-center text-xs uppercase font-bold tracking-[0.2em]">
+                © 2025 Barat Residence. Designed with Precision.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            menuToggle.addEventListener("click", function () {
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            document.addEventListener("click", function (event) {
+                const isClickInsideMenu = mobileMenu.contains(event.target);
+                const isClickOnButton = menuToggle.contains(event.target);
+
+                if (!isClickInsideMenu && !isClickOnButton) {
+                    mobileMenu.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
